@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="DEP_Contact_Widget_Backend.php" server="ftp.davideugenepratt.com/public_html/newportmobilenotary/" local="130624652568035714" remote="130625164800000000" Dst="1" />
-<file name="DEP_Contact_Widget_Frontend.php" server="ftp.davideugenepratt.com/public_html/newportmobilenotary/" local="130624811888028190" remote="130625164800000000" Dst="1" />
-<file name="DEP_Contact_Widget_Frontend_Thankyou.php" server="ftp.davideugenepratt.com/public_html/newportmobilenotary/" local="130624652568165373" remote="130625164800000000" Dst="1" />
+<file name="Formation_Contact_Widget_Backend.php" server="ftp.davideugenepratt.com/public_html/" local="130649708749992314" remote="130650000000000000" Dst="1" />
+<file name="Formation_Contact_Widget_Frontend.php" server="ftp.davideugenepratt.com/public_html/" local="130649708750002314" remote="130650000000000000" Dst="1" />
+<file name="Formation_Contact_Widget_Frontend_Thankyou.php" server="ftp.davideugenepratt.com/public_html/" local="130649708750022299" remote="130650000000000000" Dst="1" />
+<file name="Formation_Social_Widget_Backend.php" server="ftp.davideugenepratt.com/public_html/" local="130649708750042296" remote="130650000000000000" Dst="1" />
+<file name="Formation_Social_Widget_Frontend.php" server="ftp.davideugenepratt.com/public_html/" local="130649708750052289" remote="130650000000000000" Dst="1" />
 </dwsync>

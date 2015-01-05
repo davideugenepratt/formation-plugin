@@ -1,15 +1,16 @@
 <div class="formation_contact_wrapper" >
+<?php var_dump( $instance ); ?>
 	<div class="formation_contact_title_container">
         <label for="<?php echo $this->get_field_name( 'title' ); ?>">
             Title: 
-            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'title' ); ?>"  value="<?php echo esc_attr( $instance[ 'title' ] ); ?>">       
+            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'title' ); ?>"  value="<?php echo ( isset( $instance[ 'title' ] ) ) ? esc_attr( $instance[ 'title' ] ) : ''; ?>">       
         </label>
         
     </div>
     <div class="formation_contact_email_container">
         <label for="<?php echo $this->get_field_name( 'email' ); ?>">
             E-Mail:       
-            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'email' ); ?>"  value="<?php echo esc_attr( $instance[ 'email' ] ); ?>"> 
+            <input type="text" class="widefat" name="<?php echo $this->get_field_name( 'email' ); ?>"  value="<?php echo ( isset( $instance[ 'email' ] ) ) ? esc_attr( $instance[ 'email' ] ) : ''; ?>"> 
         </label>        
     </div>
     <?php $args = array(
@@ -32,11 +33,11 @@
 	$pages = get_pages($args); 
 	?>
     <div class="formation_contact_redirect_container">
-        <label for="<?php echo $this->get_field_name( 'redirect' ); ?>">
+        <label for="<?php echo $this->get_field_name( 'success' ); ?>">
             On success, redirect to:       
-            <select class="widefat" name="<?php echo $this->get_field_name( 'redirect' ); ?>" > 
+            <select class="widefat" name="<?php echo $this->get_field_name( 'success' ); ?>" > 
             	<?php foreach( $pages as $page ) { ?>
-                <?php $selected = ( $page->guid == $instance[ 'redirect' ] ) ? 'selected="selected"' : ''; ?>
+                <?php $selected = ( $page->guid == $instance[ 'success' ] ) ? 'selected="selected"' : ''; ?>
                 <option value="<?php echo $page->guid; ?>" <?php echo $selected; ?> ><?php echo $page->post_title; ?></option>
                 <?php } ?>
             </select>
@@ -64,7 +65,7 @@
             </tfoot>
             <tbody>
                 <tr class="all-fields no-fields">
-                    <td colspan="3"><input type="text" name="<?php echo $this->get_field_name( 'fields' ); ?>" class="all-fields widefat" value="<?php echo esc_attr( $instance[ 'fields' ] ); ?>"></td>
+                    <td colspan="3"><input type="text" name="<?php echo $this->get_field_name( 'fields' ); ?>" class="all-fields widefat" value="<?php echo ( isset( $instance[ 'fields' ] ) ) ? esc_attr( $instance[ 'fields' ] ) : ''; ?>"></td>
                 </tr>
                 <tr class="template-row no-fields">
                     <td class="row-delete" ><a href="#" class="row-delete"><div class="dashicons dashicons-trash"></div></a></td>

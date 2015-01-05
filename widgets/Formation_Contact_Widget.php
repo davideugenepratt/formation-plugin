@@ -25,10 +25,9 @@ class Formation_Contact_Widget extends WP_Widget {
 		
 		function formation_contact_scripts() {
 			wp_enqueue_style( 'formation-contact-css', plugin_dir_url( __FILE__ ) . 'css/formation-contact-widget.css' );
-		}
+		}		
 		
-		
-		/* This hook and the corresponding function load the css file and JS file for the front end of the widget */
+		/* This hook and the corresponding function load the css file and JS file for the back end of the widget */
 		
 		add_action('admin_enqueue_scripts', 'formation_contact_admin_scripts');
 		 
@@ -38,6 +37,17 @@ class Formation_Contact_Widget extends WP_Widget {
 			wp_enqueue_script('formation-contact-admin-js');
 		}
 		
+		add_action('template_redirect', array( $this , 'formation_contact_send_mail' ) );				
+		
+	}
+
+	public function formation_contact_send_mail( $instance ) {
+		if ( isset( $_POST['action'] ) && $_POST['action'] == 'formation_contact_submit' ) {
+			if ( $this->submit_form( $_POST, json_decode( stripslashes( $_POST['fields'] ) ), $_POST['email'] ) ) {
+				wp_redirect( $_POST['success'] );
+				exit;
+			}
+		}
 	}
 
 	protected function validate_inputs( $inputs, $fields ) {
@@ -100,6 +110,9 @@ class Formation_Contact_Widget extends WP_Widget {
 	}
 	
 	protected function get_field_html( $key, $field ) {
+		
+		$input_class = '';
+		
 		switch ( $field[1] ) {
 			case 'text':
 				$field_html = '<input type="text" name="field-'.$key.'" class="dep_contact_input '.$input_class.'">';
@@ -130,10 +143,13 @@ class Formation_Contact_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-			
+		
+		/*	
 		if ( isset( $_POST['action'] ) && $_POST['action'] == 'formation_contact_submit' ) {
 			if ( $this->submit_form( $_POST, json_decode( $instance['fields'] ), $instance['email'] ) ) {			
-				require plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/templates/Formation_Contact_Widget_Frontend_Thankyou.php';
+				require plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/templates/Formation_Contact_Widget_Frontend.php';
+				//wp_redirect( $_POST['success'] );
+				//exit;
 			}
 			else {
 				require plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/templates/Formation_Contact_Widget_Frontend.php';
@@ -142,6 +158,9 @@ class Formation_Contact_Widget extends WP_Widget {
 		else {
 			require plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/templates/Formation_Contact_Widget_Frontend.php';
 		}
+		*/
+		
+		require plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/templates/Formation_Contact_Widget_Frontend.php';
 
 	}
 

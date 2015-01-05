@@ -6,7 +6,7 @@ echo $args['before_widget'];
 echo '<h3 class="widget-title">'.$instance['title'].'</h3>';
 ?>
 
-<form role="form" method="post" action="index.php">
+<form role="form" method="post" action="<?php echo 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; ?>">
 
 <?php
 if ( $this->error ) {
@@ -54,6 +54,9 @@ if ( !empty( $fields ) ) {
 ?>
 <input type="text" name="body" value="" class="hp" />
 <button type="submit" class="btn btn-default">Submit</button>
+<input type="hidden" name="success" value="<?php echo $instance['success']; ?>" >
+<input type="hidden" name="fields" value="<?php echo esc_attr( $instance['fields'] ); ?>" >
+<input type="hidden" name="email" value="<?php echo $instance['email']; ?>" >
 <input type="hidden" name="action" value="formation_contact_submit" >
 <div class="required_fields">* Indicates required fields</div>
 </form>

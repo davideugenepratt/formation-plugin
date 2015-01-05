@@ -1,5 +1,4 @@
 <div class="formation_contact_wrapper" >
-<?php var_dump( $instance ); ?>
 	<div class="formation_contact_title_container">
         <label for="<?php echo $this->get_field_name( 'title' ); ?>">
             Title: 
@@ -91,7 +90,7 @@
                 </tr>
                 <?php
 				
-				$fields = json_decode( $instance['fields'] );
+				$fields = ( isset( $instance['fields'] ) ) ? json_decode( $instance['fields'] ) : array();
 				
 				if ( empty( $fields ) ) {					
 					?>

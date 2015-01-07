@@ -3,7 +3,8 @@
 $fields = json_decode( $instance['fields'] );
 
 echo $args['before_widget'];
-echo '<h3 class="widget-title">'.$instance['title'].'</h3>';
+echo '<div class="formation-contact-widget" tabindex="1">';
+echo $args['before_title'].$instance['title'].$args['after_title'];
 ?>
 
 <form role="form" method="post" action="<?php echo 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; ?>">
@@ -62,7 +63,7 @@ if ( !empty( $fields ) ) {
 </form>
 
 <?php
-
+echo '</div>';
 echo $args['after_widget'];
 
 ?>

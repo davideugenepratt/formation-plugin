@@ -44,11 +44,7 @@
     </div>
     <div class="formation_contact_fields_container">
         <label>Fields:</label>
-        <div class="tablenav top">
-        	<div class="alignleft">
-            	<a class="button action add-field" href="#">Add New Field</a>  
-            </div>
-        </div>
+        
         <table class="wp-list-table widefat fixed tags fields-table">
         	<thead>
             	<tr class="no-fields">
@@ -155,6 +151,10 @@
 				?>
             </tbody>
         </table>
-          
+        <div class="tablenav top">
+        	<div class="alignleft">
+            	<a class="button action add-field" href="#">Add New Field</a>  
+            </div>
+        </div>  
     </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Adds Bootstrap_Slider_Widget widget.
+ * Adds Formation_Contact_Widget.
  */
 class Formation_Contact_Widget extends WP_Widget {
 	

@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(general_enclosed_foundicons.css); 
+@import url(general_enclosed_foundicons_ie7.css); 
+
+.formation_image_slider_widget_container {
+	padding-top:15px;
+}
+
+.slider_images_container {
+	margin-top:20px;
+}
+
+.slider_image {
+	margin-bottom:15px;
+}
+
+.slider_image img {
+	margin-bottom:5px;
+}
+
+.slider_image img {
+	max-width:100%;
+	height:auto;
+}
+
+.formation_image_slider_add_image {
+	width:100%;
+}
+
+.formation_image_slider_widget_container .control {
+	text-decoration:none;
+	font-size:20px;
+	margin-right:10px;
+}
+
+.formation_image_slider_widget_container .control span {
+	display:none;
+}

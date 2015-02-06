@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Adds Bootstrap_Slider_Widget widget.
+ * Adds Formation_Social_Widget.
  */
  
 class Formation_Social_Widget extends WP_Widget {

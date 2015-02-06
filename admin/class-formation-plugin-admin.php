@@ -56,10 +56,18 @@ class Formation_Plugin_Admin {
         }
 	
 	public function formation_plugin_widgets_init() {
+		
+		include( plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/Formation_Image_Slider_Widget.php');
+		register_widget( 'Formation_Image_Slider_Widget' );
+		
 		include( plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/Formation_Contact_Widget.php');
 		register_widget( 'Formation_Contact_Widget' );
 		
 		include( plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/Formation_Social_Widget.php');
 		register_widget( 'Formation_Social_Widget' );	
+		
+		include( plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/Formation_Latest_Posts_Widget.php');
+		register_widget( 'Formation_Latest_Posts_Widget' );	
+		
 	}
 }

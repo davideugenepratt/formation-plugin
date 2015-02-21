@@ -17,16 +17,18 @@ class Formation_Plugin_Loader {
         $this->actions = $this->add( $this->actions, $hook, $component, $callback );
     }
  
-    public function add_filter( $hook, $component, $callback ) {
-        $this->filters = $this->add( $this->filters, $hook, $component, $callback );
+    public function add_filter( $hook, $component, $callback, $priority = '', $accepted_args = '' ) {
+        $this->filters = $this->add( $this->filters, $hook, $component, $callback, $priority , $accepted_args );
     }
  
-    private function add( $hooks, $hook, $component, $callback ) {
+    private function add( $hooks, $hook, $component, $callback, $priority = '', $accepted_args = '' ) {
  
         $hooks[] = array(
             'hook'      => $hook,
             'component' => $component,
-            'callback'  => $callback
+            'callback'  => $callback,
+			'priority' => $priority,
+			'accepted_args' => $accepted_args
         );
  
         return $hooks;
@@ -36,7 +38,7 @@ class Formation_Plugin_Loader {
     public function run() {
  
         foreach ( $this->filters as $hook ) {
-            add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ) );
+            add_filter( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
         }
  
         foreach ( $this->actions as $hook ) {

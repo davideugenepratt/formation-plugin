@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name:       Formation PLugin
+ * Plugin Name:       Formation Plugin
  * Plugin URI:        http://github.com/davideugenepratt/plugin-base
  * Description:       Provides extra functionality to the Formation Starter Theme.
  * Version:           0.1.0

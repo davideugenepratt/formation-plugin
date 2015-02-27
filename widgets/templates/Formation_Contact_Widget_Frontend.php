@@ -22,7 +22,7 @@ if ( $this->error ) {
 }
 ?>
 
-
+  
 
 <?php				
 if ( !empty( $fields ) ) {
